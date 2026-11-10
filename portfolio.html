@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF0F3; --ink:#14213D; --muted:#4A5568; --line:#C9CFD9;
+  --accent:#2F5BFF; --tint:#DDE6FF;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0E1626; --ink:#EAEFFB; --muted:#9AA7C0; --line:#26324A; --accent:#7C9BFF; --tint:#1B2A4D;}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);padding:0 clamp(1.25rem,5vw,4rem)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;font-weight:500}
+nav ul{display:flex;gap:1.5rem;list-style:none;padding:0}
+nav a{text-decoration:none}
+nav a:hover{color:var(--accent)}
+.hero{padding:clamp(3rem,10vw,8rem) 0 clamp(2.5rem,6vw,5rem)}
+h1{font:800 clamp(3.2rem,12vw,9rem)/.92 var(--head);letter-spacing:-.04em;animation:rise .8s ease-out both}
+.hero p{max-width:34rem;margin-top:1.75rem;font-size:1.25rem;color:var(--muted)}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:500}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn:hover{filter:brightness(1.1)}
+section{padding:clamp(2.5rem,6vw,4.5rem) 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.8rem,4vw,2.6rem)/1.1 var(--head);letter-spacing:-.02em;margin-bottom:1.75rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p+p{margin-top:1rem}
+.skills{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;align-content:flex-start}
+.skills li{background:var(--tint);padding:.35rem .9rem;border-radius:999px;font-weight:500;font-size:.95rem}
+.proj{display:grid;grid-template-columns:7rem 1fr auto;gap:1.5rem;align-items:baseline;padding:1.5rem 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .2s}
+.proj:first-of-type{border-top:1px solid var(--line)}
+.proj:hover{padding-left:1rem;background:var(--tint)}
+.proj time{color:var(--muted)}
+.proj h3{font:500 1.5rem/1.2 var(--head)}
+.proj p{color:var(--muted);margin-top:.25rem}
+.proj span{color:var(--accent);font-weight:500;white-space:nowrap}
+.contact p{max-width:34rem;color:var(--muted);margin-bottom:1.5rem}
+.contact .mail{font:800 clamp(1.4rem,5vw,3rem)/1.1 var(--head);letter-spacing:-.02em;color:var(--accent);word-break:break-word}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (max-width:700px){
+  .about{grid-template-columns:1fr;gap:1.5rem}
+  .proj{grid-template-columns:1fr;gap:.25rem}
+  nav ul{gap:1rem}
+}
+@media (prefers-reduced-motion:reduce){h1{animation:none}html{scroll-behavior:auto}.proj{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <strong>Your Name</strong>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Your Name</h1>
+    <p>I’m a [your role], based in [your city]. I build [what you make] for [who you make it for].</p>
+    <div class="btns">
+      <a class="btn" href="#work">See my work</a>
+      <a class="btn alt" href="mailto:you@example.com">Email me</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About me</h2>
+      <div class="about">
+        <div>
+          <p>Write two or three sentences about your background: where you studied, where you’ve worked, and what you enjoy most about your craft.</p>
+          <p>Add one sentence about what you’re looking for now, such as full-time roles, freelance projects, or collaborations.</p>
+        </div>
+        <ul class="skills" aria-label="Skills">
+          <li>Skill one</li><li>Skill two</li><li>Skill three</li>
+          <li>Skill four</li><li>Skill five</li><li>Skill six</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Selected work</h2>
+      <a class="proj" href="#">
+        <time datetime="2026">2026</time>
+        <div><h3>Project name</h3><p>One line on what it is and what you did.</p></div>
+        <span>View project</span>
+      </a>
+      <a class="proj" href="#">
+        <time datetime="2025">2025</time>
+        <div><h3>Project name</h3><p>One line on what it is and what you did.</p></div>
+        <span>View project</span>
+      </a>
+      <a class="proj" href="#">
+        <time datetime="2024">2024</time>
+        <div><h3>Project name</h3><p>One line on what it is and what you did.</p></div>
+        <span>View project</span>
+      </a>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Get in touch</h2>
+      <p>Have a project or an opportunity in mind? Send me a message and I’ll reply within a few days.</p>
+      <a class="mail" href="mailto:you@example.com">you@example.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#">GitHub</a> &nbsp; <a href="#">LinkedIn</a> &nbsp; <a href="#">Resume</a>
+    <p style="margin-top:1rem">© 2026 Your Name</p>
+  </footer>
+</div>
+</body>
+</html>
